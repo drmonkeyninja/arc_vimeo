@@ -29,6 +29,8 @@ function arc_vimeo($atts,$thing)
 		'height'    => '0',
 		'ratio'		=> '4:3',
 		'color'		=> null,
+		'portrait'	=> null,
+		'title'		=> null,
 		'label'     => '',
 		'labeltag'  => '',
 		'wraptag'   => '',
@@ -73,6 +75,16 @@ function arc_vimeo($atts,$thing)
 	// Check if the player's UI colour is being customised.
 	if ($color && preg_match('|^#?([a-z0-9]{6})$|i', $color, $match)) {
 		$qString[] = 'color=' . $match[1];
+	}
+
+	// Check whether to show or hide the user's portrait from the video.
+	if ($portrait!==null) {
+		$qString[] = 'portrait=' . $portrait ? '1' : '0';
+	}
+
+	// Check whether to show or hide the video title.
+	if ($title!==null) {
+		$qString[] = 'title=' . $title ? '1' : '0';
 	}
 
 	// Check if we need to append a query string to the video src.
