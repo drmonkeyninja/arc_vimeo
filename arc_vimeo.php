@@ -31,6 +31,7 @@ function arc_vimeo($atts,$thing)
 		'color'		=> null,
 		'portrait'	=> null,
 		'title'		=> null,
+		'byline'	=> null,
 		'label'     => '',
 		'labeltag'  => '',
 		'wraptag'   => '',
@@ -85,6 +86,11 @@ function arc_vimeo($atts,$thing)
 	// Check whether to show or hide the video title.
 	if ($title!==null) {
 		$qString[] = 'title=' . $title ? '1' : '0';
+	}
+
+	// Check whether to show or hide the user's byline.
+	if ($byline!==null) {
+		$qString[] = 'byline=' . $byline ? '1' : '0';
 	}
 
 	// Check if we need to append a query string to the video src.
