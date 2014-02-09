@@ -32,6 +32,7 @@ function arc_vimeo($atts,$thing)
 		'portrait'	=> null,
 		'title'		=> null,
 		'byline'	=> null,
+		'badge'	=> null,
 		'label'     => '',
 		'labeltag'  => '',
 		'wraptag'   => '',
@@ -91,6 +92,11 @@ function arc_vimeo($atts,$thing)
 	// Check whether to show or hide the user's byline.
 	if ($byline!==null) {
 		$qString[] = 'byline=' . $byline ? '1' : '0';
+	}
+
+	// Check whether to show or hide the badge.
+	if ($badge!==null) {
+		$qString[] = 'badge=' . $badge ? '1' : '0';
 	}
 
 	// Check if we need to append a query string to the video src.
