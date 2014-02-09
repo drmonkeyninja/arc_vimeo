@@ -22,17 +22,20 @@ function arc_vimeo($atts,$thing)
 {
 	global $thisarticle;
 
-	extract(lAtts(array(
+	$defaults = array(
 		'video'     => '',
 		'custom'    => 'Vimeo ID',
 		'width'     => '0',
 		'height'    => '0',
 		'ratio'		=> '4:3',
+		'color'		=> null,
 		'label'     => '',
 		'labeltag'  => '',
 		'wraptag'   => '',
 		'class'     => __FUNCTION__
-	), $atts));
+	);
+
+	extract(lAtts($defaults, $atts));
 
     $custom = strtolower($custom);
     if ($video && isset($thisarticle[$custom])) {
@@ -64,6 +67,18 @@ function arc_vimeo($atts,$thing)
     }
 
 	$src = '//player.vimeo.com/video/' . $video;
+
+	$qString = array();
+
+	// Check if the player's UI colour is being customised.
+	if ($color && preg_match('|^#?([a-z0-9]{6})$|i', $color, $match)) {
+		$qString[] = 'color=' . $match[1];
+	}
+
+	// Check if we need to append a query string to the video src.
+	if (!empty($qString)) {
+		$src .= '?' . implode('&amp;', $qString);
+	}
 
 	$out = "<iframe src='$src' width='$width' height='$height' frameborder='0' webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe>";
 
