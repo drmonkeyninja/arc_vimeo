@@ -49,12 +49,18 @@ function arc_vimeo($atts,$thing)
         $video = $thisarticle[$custom];
     }
 
+    if (preg_match('#^http://((player|www)\.)?vimeo\.com(/video)?/(\d+)#i', $video, $matches)) {
+    	$video = $matches[4];
+    } elseif (empty($video)) {
+    	return '';
+    }
+
     // If the width and/or height has not been set we want to calculate new
     // ones using the aspect ratio.
     if (!$width || !$height) {
     	
     	// Work out the aspect ratio.
-    	preg_match("/([0-9]+):([0-9]+)/", $ratio, $matches);
+    	preg_match("/(\d+):(\d+)/", $ratio, $matches);
     	if ($matches[0] && $matches[1]!=0 && $matches[2]!=0) {
 			$aspect = $matches[1]/$matches[2];
 		} else {
