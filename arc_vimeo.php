@@ -90,37 +90,37 @@ function arc_vimeo($atts,$thing)
 
 	// Check whether to show or hide the user's portrait from the video.
 	if ($portrait!==null) {
-		$qString[] = 'portrait=' . $portrait ? '1' : '0';
+		$qString[] = 'portrait=' . ($portrait ? '1' : '0');
 	}
 
 	// Check whether to show or hide the video title.
 	if ($title!==null) {
-		$qString[] = 'title=' . $title ? '1' : '0';
+		$qString[] = 'title=' . ($title ? '1' : '0');
 	}
 
 	// Check whether to show or hide the user's byline.
 	if ($byline!==null) {
-		$qString[] = 'byline=' . $byline ? '1' : '0';
+		$qString[] = 'byline=' . ($byline ? '1' : '0');
 	}
 
 	// Check whether to show or hide the badge.
 	if ($badge!==null) {
-		$qString[] = 'badge=' . $badge ? '1' : '0';
+		$qString[] = 'badge=' . ($badge ? '1' : '0');
 	}
 
 	// Check whether to play the video on loop.
 	if ($loop!==null) {
-		$qString[] = 'loop=' . $loop ? '1' : '0';
+		$qString[] = 'loop=' . ($loop ? '1' : '0');
 	}
 
 	// Check whether to enable/disable autopause.
 	if ($autopause!==null) {
-		$qString[] = 'autopause=' . $autopause ? '1' : '0';
+		$qString[] = 'autopause=' . ($autopause ? '1' : '0');
 	}
 
 	// Check whether to enable/disable autoplay.
 	if ($autoplay!==null) {
-		$qString[] = 'autoplay=' . $autoplay ? '1' : '0';
+		$qString[] = 'autoplay=' . ($autoplay ? '1' : '0');
 	}
 
 	// Check if we need to append a query string to the video src.
