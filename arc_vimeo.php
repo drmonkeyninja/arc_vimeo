@@ -72,7 +72,7 @@ You can customise the appearance of the Vimeo player using this plugin to define
 
 # --- BEGIN PLUGIN CODE ---
 
-function arc_vimeo($atts,$thing)
+function arc_vimeo($atts, $thing)
 {
 	global $thisarticle;
 
@@ -103,8 +103,9 @@ function arc_vimeo($atts,$thing)
         $video = $thisarticle[$custom];
     }
 
-    if (preg_match('#^http://((player|www)\.)?vimeo\.com(/video)?/(\d+)#i', $video, $matches)) {
-    	$video = $matches[4];
+    $match = _arc_is_vimeo($video);
+    if ($match) {
+    	$video = $match;
     } elseif (empty($video)) {
     	return '';
     }
@@ -186,6 +187,24 @@ function arc_vimeo($atts,$thing)
 
 	return doLabel($label, $labeltag) . (($wraptag) ? doTag($out, $wraptag, $class) : $out);
 
+}
+
+function arc_if_vimeo($atts, $thing)
+{
+	extract(lAtts(array(
+		'video' => ''
+	), $atts));
+
+	return parse(EvalElse($thing, _arc_is_vimeo($video)));
+}
+
+function _arc_is_vimeo($video)
+{
+	if (preg_match('#^http://((player|www)\.)?vimeo\.com(/video)?/(\d+)#i', $video, $matches)) {
+    	return $matches[4];
+    }
+
+    return false;
 }
 
 # --- END PLUGIN CODE ---
