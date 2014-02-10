@@ -66,6 +66,18 @@ You can customise the appearance of the Vimeo player using this plugin to define
 |autoplay|'1' to autoplay the video, '0' to turn off autoplay (default)|0| |
 |autopause|'1' to autopause the video when another is played on the same page|0| |
 
+h2. arc_if_vimeo
+
+In addition to arc_vimeo this plugin also comes with arc_if_vimeo, a conditional tag for checking if the video URL is a Vimeo one.
+
+h3. Usage
+
+bc.. <txp:arc_if_vimeo video='http://vimeo.com/86295452'>
+	Yes
+<txp:else />
+	No
+</txp:arc_if_vimeo>
+
 # --- END PLUGIN HELP ---
 <?php
 }
