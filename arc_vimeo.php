@@ -22,8 +22,9 @@ h2. Table of contents
 # "Plugin requirements":#help-section01
 # "Installation":#help-section02
 # "Tags":#help-section03
-# "Author":#help-section04
-# "License":#help-section05
+# "Examples":#help-section04
+# "Author":#help-section05
+# "License":#help-section06
 
 h2(#help-section01). Plugin requirements
 
@@ -104,11 +105,11 @@ bc.. <txp:arc_if_vimeo video='http://vimeo.com/86295452'>
 	No
 </txp:arc_if_vimeo>
 
-h2(#help-section04). Author
+h2(#help-section05). Author
 
 "Andy Carter":http://andy-carter.com. For other Textpattern plugins by me visit my "Plugins page":http://andy-carter.com/txp.
 
-h2(#help-section05). License
+h2(#help-section06). License
 
 The MIT License (MIT)
 
