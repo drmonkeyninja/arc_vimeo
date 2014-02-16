@@ -115,7 +115,7 @@ function arc_vimeo($atts, $thing)
         $video = $thisarticle[$custom];
     }
 
-    $match = _arc_is_vimeo($video);
+    $match = _arc_vimeo($video);
     if ($match) {
     	$video = $match;
     } elseif (empty($video)) {
@@ -203,14 +203,19 @@ function arc_vimeo($atts, $thing)
 
 function arc_if_vimeo($atts, $thing)
 {
+	global $thisarticle;
+
 	extract(lAtts(array(
-		'video' => ''
+		'custom' => null,
+		'video' => null
 	), $atts));
 
-	return parse(EvalElse($thing, _arc_is_vimeo($video)));
+	$result = $video ? _arc_vimeo($video) : _arc_vimeo($thisarticle[strtolower($custom)]);
+
+	return parse(EvalElse($thing, $result));
 }
 
-function _arc_is_vimeo($video)
+function _arc_vimeo($video)
 {
 	if (preg_match('#^http://((player|www)\.)?vimeo\.com(/video)?/(\d+)#i', $video, $matches)) {
     	return $matches[4];
