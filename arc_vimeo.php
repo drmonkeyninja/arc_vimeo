@@ -15,68 +15,111 @@ if (0) {
 
 h1. arc_vimeo
 
-h2. Description
-
 Easily embed Vimeo videos in articles and customise the appearance of the player.
 
+h2. Table of contents
 
-h2. Installation
+# "Plugin requirements":#help-section01
+# "Installation":#help-section02
+# "Tags":#help-section03
+# "Author":#help-section04
+# "License":#help-section05
+
+h2(#help-section01). Plugin requirements
+
+arc_vimeo's minimum requirements:
+
+* Textpattern 4.5+
+
+
+h2(#help-section02). Installation
 
 To install go to the 'plugins' tab under 'admin' and paste the plugin code into the 'Install plugin' box, 'upload' and then 'install'. Please note that you will need to set-up a custom field to use for associating videos with articles, unless you choose to directly embed the new tag in the article text.
 
 
-h2. Syntax
+h2(#help-section03). Tags
 
-bc.. <txp:arc_vimeo />
+h3. arc_vimeo
 
-<txp:arc_vimeo video='86295452' width='500' ratio='16:9' />
+Embeds a Vimeo video in the page using an iframe.
 
-<txp:arc_vimeo video='http://vimeo.com/86295452' width='500' ratio='16:9' />
+bc. <txp:arc_vimeo />
 
-h2. Usage
+h4. Video attributes
 
-h3. Video
+* _video_ - Vimeo url or video ID for the video you want to embed
+* _custom_ - Name of the custom field containing video IDs/urls associated with article
 
-|_. Attribute|_. Description|_. Default|_. Example|
-|video|Vimeo url or video ID for the video you want to embed| _unset_|video='86295452'|
-|custom|Name of the custom field containing video IDs/urls associated with article|Vimeo ID|custom='video'|
+h4. Basic attributes
 
-h3. Basics
-
-|_. Attribute|_. Description|_. Default|_. Example|
-|label|Label for the video| _no label_|label='Vimeo video'|
-|labeltag|Independent wraptag for label| _empty_|labeltag='h3'|
-|wraptag|HTML tag to be used as the wraptag, without brackets| _unset_|wraptag='div'|
-|class|CSS class attribute for wraptag|arc_vimeo|class='vimeo'|
+* _label_ - Label for the video
+* _labeltag_ - Independent wraptag for label
+* _wraptag_ - HTML tag to be used as the wraptag, without brackets
+* _class_ - CSS class attribute for wraptag
 
 h3. Customising the Vimeo player
 
 You can customise the appearance of the Vimeo player using this plugin to define things like colours and size.
 
-|_. Attribute|_. Description|_. Default|_. Example|
-|width|Width of video|0|width='200'|
-|height|Height of video|0|height='150'|
-|ratio|Aspect ratio|4:3|ration='16:9'|
-|color|A hex colour code for the player UI elements|00adef|color='ff6500'|
-|portrait|'0' to disable the user's portrait|1| |
-|title|'0' to disable the video's title|1| |
-|byline|'0' to disable the video's byline|1| |
-|badge|'0' to disable the video's badge|1| |
-|loop|'1' to loop the video on play|0| |
-|autoplay|'1' to autoplay the video, '0' to turn off autoplay (default)|0| |
-|autopause|'1' to autopause the video when another is played on the same page|0| |
+* _width_ - Width of video
+* _height_ - Height of video
+* _ratio_ - Aspect ratio (defaults 4:3)
+* _color_ - A hex colour code for the player UI elements
+* _portrait_ - '0' to disable the user's portrait
+* _title_ - '0' to disable the video's title
+* _byline_ - '0' to disable the video's byline
+* _badge_ - '0' to disable the video's badge
+* _loop_ - '1' to loop the video on play
+* _autoplay_ - '1' to autoplay the video, '0' to turn off autoplay (default)
+* _autopause_ - '1' to autopause the video when another is played on the same page
 
 h2. arc_if_vimeo
 
 In addition to arc_vimeo this plugin also comes with arc_if_vimeo, a conditional tag for checking if the video URL is a Vimeo one.
 
-h3. Usage
+bc. <txp:arc_if_vimeo video='[URL]'></txp:arc_if_vimeo>
+
+h4. Attributes
+
+Use one or the other of the following:-
+
+* _custom_ - Name of the custom field containing video IDs/urls associated with article
+* _video_ - A URL to check if it is a valid Vimeo URL
+
+h2(#help-section04). Examples
+
+h3. Example 1: Use custom field to associate video with an article
+
+bc. <txp:arc_vimeo custom="Vimeo" />
+
+h3. Example 2: Set the size of the player
+
+bc. <txp:arc_vimeo video='http://vimeo.com/86295452' width='500' ratio='16:9' />
+
+h3. Example 3: Using the conditional tag
 
 bc.. <txp:arc_if_vimeo video='http://vimeo.com/86295452'>
 	Yes
 <txp:else />
 	No
 </txp:arc_if_vimeo>
+
+h2(#help-section04). Author
+
+"Andy Carter":http://andy-carter.com. For other Textpattern plugins by me visit my "Plugins page":http://andy-carter.com/txp.
+
+h2(#help-section05). License
+
+The MIT License (MIT)
+
+Copyright (c) 2014 Andy Carter
+
+Permission is hereby granted, free of charge, to any person obtaining a copy of this software and associated documentation files (the "Software"), to deal in the Software without restriction, including without limitation the rights to use, copy, modify, merge, publish, distribute, sublicense, and/or sell copies of the Software, and to permit persons to whom the Software is furnished to do so, subject to the following conditions:
+
+The above copyright notice and this permission notice shall be included in all copies or substantial portions of the Software.
+
+THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
+
 
 # --- END PLUGIN HELP ---
 <?php
