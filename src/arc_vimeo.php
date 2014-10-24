@@ -261,7 +261,7 @@ function arc_if_vimeo($atts, $thing)
 
 function _arc_vimeo($video)
 {
-	if (preg_match('#^http://((player|www)\.)?vimeo\.com(/video)?/(\d+)#i', $video, $matches)) {
+	if (preg_match('#^https?://((player|www)\.)?vimeo\.com(/video)?/(\d+)#i', $video, $matches)) {
     	return $matches[4];
     }
 
