@@ -78,7 +78,7 @@ h2. arc_if_vimeo
 
 In addition to arc_vimeo this plugin also comes with arc_if_vimeo, a conditional tag for checking if the video URL is a Vimeo one.
 
-bc. <txp:arc_if_vimeo video='[URL]'></txp:arc_if_vimeo>
+bc. <txp:arc_if_vimeo video="[URL]"></txp:arc_if_vimeo>
 
 h4. Attributes
 
@@ -95,11 +95,11 @@ bc. <txp:arc_vimeo custom="Vimeo" />
 
 h3. Example 2: Set the size of the player
 
-bc. <txp:arc_vimeo video='http://vimeo.com/86295452' width='500' ratio='16:9' />
+bc. <txp:arc_vimeo video="http://vimeo.com/86295452" width="500" ratio="16:9" />
 
 h3. Example 3: Using the conditional tag
 
-bc.. <txp:arc_if_vimeo video='http://vimeo.com/86295452'>
+bc.. <txp:arc_if_vimeo video="http://vimeo.com/86295452">
 	Yes
 <txp:else />
 	No
@@ -239,7 +239,7 @@ function arc_vimeo($atts, $thing)
 		$src .= '?' . implode('&amp;', $qString);
 	}
 
-	$out = "<iframe src='$src' width='$width' height='$height' frameborder='0' webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe>";
+	$out = "<iframe src=\"$src\" width=\"$width\" height=\"$height\" frameborder=\"0\" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe>";
 
 	return doLabel($label, $labeltag) . (($wraptag) ? doTag($out, $wraptag, $class) : $out);
 
