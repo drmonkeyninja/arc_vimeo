@@ -1,7 +1,7 @@
 <?php
 $plugin['name'] = 'arc_vimeo';
 
-$plugin['version'] = '1.0';
+$plugin['version'] = '1.1';
 $plugin['author'] = 'Andy Carter';
 $plugin['author_uri'] = 'http://andy-carter.com/';
 $plugin['description'] = 'Embed Vimeo videos with customised player';
@@ -78,7 +78,7 @@ h2. arc_if_vimeo
 
 In addition to arc_vimeo this plugin also comes with arc_if_vimeo, a conditional tag for checking if the video URL is a Vimeo one.
 
-bc. <txp:arc_if_vimeo video='[URL]'></txp:arc_if_vimeo>
+bc. <txp:arc_if_vimeo video="[URL]"></txp:arc_if_vimeo>
 
 h4. Attributes
 
@@ -95,11 +95,11 @@ bc. <txp:arc_vimeo custom="Vimeo" />
 
 h3. Example 2: Set the size of the player
 
-bc. <txp:arc_vimeo video='http://vimeo.com/86295452' width='500' ratio='16:9' />
+bc. <txp:arc_vimeo video="https://vimeo.com/86295452" width="500" ratio="16:9" />
 
 h3. Example 3: Using the conditional tag
 
-bc.. <txp:arc_if_vimeo video='http://vimeo.com/86295452'>
+bc.. <txp:arc_if_vimeo video="https://vimeo.com/86295452">
 	Yes
 <txp:else />
 	No
@@ -239,7 +239,7 @@ function arc_vimeo($atts, $thing)
 		$src .= '?' . implode('&amp;', $qString);
 	}
 
-	$out = "<iframe src='$src' width='$width' height='$height' frameborder='0' webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe>";
+	$out = "<iframe src=\"$src\" width=\"$width\" height=\"$height\" frameborder=\"0\" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe>";
 
 	return doLabel($label, $labeltag) . (($wraptag) ? doTag($out, $wraptag, $class) : $out);
 
@@ -261,7 +261,7 @@ function arc_if_vimeo($atts, $thing)
 
 function _arc_vimeo($video)
 {
-	if (preg_match('#^http://((player|www)\.)?vimeo\.com(/video)?/(\d+)#i', $video, $matches)) {
+	if (preg_match('#^https?://((player|www)\.)?vimeo\.com(/video)?/(\d+)#i', $video, $matches)) {
     	return $matches[4];
     }
 
