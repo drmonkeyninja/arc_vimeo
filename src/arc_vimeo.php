@@ -155,7 +155,7 @@ function arc_vimeo($atts, $thing)
 	extract(lAtts($defaults, $atts));
 
     $custom = strtolower($custom);
-    if ($video && isset($thisarticle[$custom])) {
+    if (!$video && isset($thisarticle[$custom])) {
         $video = $thisarticle[$custom];
     }
 
