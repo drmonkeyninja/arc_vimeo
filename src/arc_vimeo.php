@@ -109,6 +109,10 @@ h2(#help-section05). Author
 
 "Andy Carter":http://andy-carter.com. For other Textpattern plugins by me visit my "Plugins page":http://andy-carter.com/txp.
 
+Contributors: Andy Carter and Kevin Ashworth.
+
+Thanks to "Kevin Ashworth":http://kevinashworth.com/ for pointing out several bugs with the plugin.
+
 h2(#help-section06). License
 
 The MIT License (MIT)
