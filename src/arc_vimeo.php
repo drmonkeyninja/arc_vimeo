@@ -1,7 +1,7 @@
 <?php
 $plugin['name'] = 'arc_vimeo';
 
-$plugin['version'] = '1.1';
+$plugin['version'] = '1.1.1';
 $plugin['author'] = 'Andy Carter';
 $plugin['author_uri'] = 'http://andy-carter.com/';
 $plugin['description'] = 'Embed Vimeo videos with customised player';
@@ -109,6 +109,10 @@ h2(#help-section05). Author
 
 "Andy Carter":http://andy-carter.com. For other Textpattern plugins by me visit my "Plugins page":http://andy-carter.com/txp.
 
+Contributors: Andy Carter and Kevin Ashworth.
+
+Thanks to "Kevin Ashworth":http://kevinashworth.com/ for pointing out several bugs with the plugin.
+
 h2(#help-section06). License
 
 The MIT License (MIT)
@@ -155,7 +159,7 @@ function arc_vimeo($atts, $thing)
 	extract(lAtts($defaults, $atts));
 
     $custom = strtolower($custom);
-    if ($video && isset($thisarticle[$custom])) {
+    if (!$video && isset($thisarticle[$custom])) {
         $video = $thisarticle[$custom];
     }
 
