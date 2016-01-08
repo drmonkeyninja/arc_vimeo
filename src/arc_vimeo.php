@@ -1,7 +1,7 @@
 <?php
 $plugin['name'] = 'arc_vimeo';
 
-$plugin['version'] = '1.1.1';
+$plugin['version'] = '1.1.2';
 $plugin['author'] = 'Andy Carter';
 $plugin['author_uri'] = 'http://andy-carter.com/';
 $plugin['description'] = 'Embed Vimeo videos with customised player';
@@ -117,7 +117,7 @@ h2(#help-section06). License
 
 The MIT License (MIT)
 
-Copyright (c) 2014 Andy Carter
+Copyright (c) 2016 Andy Carter
 
 Permission is hereby granted, free of charge, to any person obtaining a copy of this software and associated documentation files (the "Software"), to deal in the Software without restriction, including without limitation the rights to use, copy, modify, merge, publish, distribute, sublicense, and/or sell copies of the Software, and to permit persons to whom the Software is furnished to do so, subject to the following conditions:
 
@@ -173,7 +173,7 @@ function arc_vimeo($atts, $thing)
     // If the width and/or height has not been set we want to calculate new
     // ones using the aspect ratio.
     if (!$width || !$height) {
-    	
+
     	// Work out the aspect ratio.
     	preg_match("/(\d+):(\d+)/", $ratio, $matches);
     	if ($matches[0] && $matches[1]!=0 && $matches[2]!=0) {

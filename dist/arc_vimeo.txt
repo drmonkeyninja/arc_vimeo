@@ -1,4 +1,4 @@
-# arc_vimeo v1.1.1
+# arc_vimeo v1.1.2
 # Embed Vimeo videos with customised player
 # Andy Carter
 # http://andy-carter.com/
@@ -10,7 +10,7 @@
 # ......................................................................
 
 YTo5OntzOjQ6Im5hbWUiO3M6OToiYXJjX3ZpbWVvIjtzOjc6InZlcnNpb24iO3M6NToiMS4x
-LjEiO3M6NjoiYXV0aG9yIjtzOjExOiJBbmR5IENhcnRlciI7czoxMDoiYXV0aG9yX3VyaSI7
+LjIiO3M6NjoiYXV0aG9yIjtzOjExOiJBbmR5IENhcnRlciI7czoxMDoiYXV0aG9yX3VyaSI7
 czoyMzoiaHR0cDovL2FuZHktY2FydGVyLmNvbS8iO3M6MTE6ImRlc2NyaXB0aW9uIjtzOjQx
 OiJFbWJlZCBWaW1lbyB2aWRlb3Mgd2l0aCBjdXN0b21pc2VkIHBsYXllciI7czo0OiJ0eXBl
 IjtpOjA7czo0OiJoZWxwIjtzOjcwNTM6Igk8aDE+YXJjX3ZpbWVvPC9oMT4KCgk8cD5FYXNp
@@ -98,7 +98,7 @@ dmluYXNod29ydGguY29tLyI+S2V2aW4gQXNod29ydGg8L2E+IGZvciBwb2ludGluZyBvdXQg
 c2V2ZXJhbCBidWdzIHdpdGggdGhlIHBsdWdpbi48L3A+CgoJPGgyIGlkPSJoZWxwLXNlY3Rp
 b24wNiI+TGljZW5zZTwvaDI+CgoJPHA+VGhlIDxzcGFuIGNsYXNzPSJjYXBzIj5NSVQ8L3Nw
 YW4+IExpY2Vuc2UgKDxzcGFuIGNsYXNzPSJjYXBzIj5NSVQ8L3NwYW4+KTwvcD4KCgk8cD5D
-b3B5cmlnaHQgJiMxNjk7IDIwMTQgQW5keSBDYXJ0ZXI8L3A+CgoJPHA+UGVybWlzc2lvbiBp
+b3B5cmlnaHQgJiMxNjk7IDIwMTYgQW5keSBDYXJ0ZXI8L3A+CgoJPHA+UGVybWlzc2lvbiBp
 cyBoZXJlYnkgZ3JhbnRlZCwgZnJlZSBvZiBjaGFyZ2UsIHRvIGFueSBwZXJzb24gb2J0YWlu
 aW5nIGEgY29weSBvZiB0aGlzIHNvZnR3YXJlIGFuZCBhc3NvY2lhdGVkIGRvY3VtZW50YXRp
 b24gZmlsZXMgKHRoZSAmIzgyMjA7U29mdHdhcmUmIzgyMjE7KSwgdG8gZGVhbCBpbiB0aGUg
