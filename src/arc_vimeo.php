@@ -1,7 +1,7 @@
 <?php
 $plugin['name'] = 'arc_vimeo';
 
-$plugin['version'] = '1.1.2';
+$plugin['version'] = '1.1.3';
 $plugin['author'] = 'Andy Carter';
 $plugin['author_uri'] = 'http://andy-carter.com/';
 $plugin['description'] = 'Embed Vimeo videos with customised player';
