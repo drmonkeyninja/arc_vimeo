@@ -132,6 +132,13 @@ THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLI
 
 # --- BEGIN PLUGIN CODE ---
 
+if (class_exists('\Textpattern\Tag\Registry')) {
+    // Register Textpattern tags for TXP 4.6+.
+    Txp::get('\Textpattern\Tag\Registry')
+        ->register('arc_vimeo')
+        ->register('arc_if_vimeo');
+}
+
 function arc_vimeo($atts, $thing)
 {
     global $thisarticle;
