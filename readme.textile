@@ -2,6 +2,8 @@ h1. arc_vimeo
 
 A Textpattern plugin for easily embedding Vimeo videos in pages using a customisable player.
 
+This plugin works well with "arc_youtube":https://github.com/drmonkeyninja/arc_youtube and "oui_dailymotion":https://github.com/NicolasGraph/oui_dailymotion if you are looking to support YouTube and DailyMotion too.
+
 h2. Table of contents
 
 # "Plugin Requirements":#help-section01
